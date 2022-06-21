@@ -8,28 +8,94 @@
 
 #import "TimelineViewController.h"
 #import "APIManager.h"
+#import "AppDelegate.h"
+#import "LoginViewController.h"
+#import "TweetCell.h"
 
-@interface TimelineViewController ()
+@interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) NSMutableArray *arrayOfTweets;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
 @implementation TimelineViewController
 
+- (IBAction)didTapLogout:(id)sender {
+    
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+
+    // changes the storyboard main view to login screen
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    appDelegate.window.rootViewController = loginViewController;
+    
+    // clear ackess tokens
+    [[APIManager shared] logout];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Get timeline
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
+    
+    // refresh capability
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:refreshControl atIndex:0];
+    
+    [self fetchTimeline];
+}
+
+- (void) fetchTimeline {
     [[APIManager shared] getHomeTimelineWithCompletion:^(NSArray *tweets, NSError *error) {
         if (tweets) {
-            NSLog(@"😎😎😎 Successfully loaded home timeline");
-            for (NSDictionary *dictionary in tweets) {
-                NSString *text = dictionary[@"text"];
-                NSLog(@"%@", text);
-            }
+            self.arrayOfTweets = [tweets mutableCopy];
+            [self.tableView reloadData];
         } else {
             NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
         }
     }];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
+    Tweet *tweet = self.arrayOfTweets[indexPath.row];
+    
+    cell.authorName.text = tweet.user.name;
+    cell.authorHandle.text = tweet.user.screenName;
+    cell.tweetDate.text = tweet.createdAtString;
+    cell.tweetText.text = tweet.text;
+    cell.favoriteCount.text = [@(tweet.favoriteCount) stringValue];
+    cell.retweetCount.text = [@(tweet.retweetCount) stringValue];
+    
+    cell.profilePicture.image = [TimelineViewController imageFromUrl:tweet.user.profilePicture];
+    
+    //make image circular
+    cell.profilePicture.layer.masksToBounds = false;
+    cell.profilePicture.layer.cornerRadius = cell.profilePicture.frame.size.width/2;
+    cell.profilePicture.clipsToBounds = true;
+    
+    
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.arrayOfTweets.count;
+}
+
++ (UIImage * )imageFromUrl:(NSString*)URLString {
+    NSURL* url = [NSURL URLWithString:URLString];
+    NSData *urlData = [NSData dataWithContentsOfURL:url];
+    return [UIImage imageWithData:urlData];
+}
+
+- (void)beginRefresh:(UIRefreshControl *)refreshControl {
+    [self fetchTimeline];
+    [refreshControl endRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
