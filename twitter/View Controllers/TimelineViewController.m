@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSMutableArray *arrayOfTweets;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+
 @end
 
 @implementation TimelineViewController
@@ -40,13 +41,13 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-    
     // refresh capability
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:refreshControl atIndex:0];
     
     [self fetchTimeline];
+    [self configureCreateTweetButton];
 }
 
 - (void) fetchTimeline {
@@ -58,6 +59,33 @@
             NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
         }
     }];
+}
+
+- (void)configureCreateTweetButton{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button addTarget:self action:@selector(onComposeTweetPress:)    forControlEvents:UIControlEventTouchUpInside];
+    button.frame = CGRectMake(self.view.frame.size.width - 70, self.view.frame.size.height - 130, 60, 60);
+    // twitter color
+    button.backgroundColor = [UIColor colorWithRed:25.0f/255.0f
+        green:155.0f/255.0f blue:239.0f/255.0f alpha:1.0f];
+    
+    button.tintColor = [UIColor whiteColor];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    if (@available(iOS 13.0, *)) {
+        UIImage *plus = [UIImage systemImageNamed:@"plus"];
+        [button setImage:plus forState: UIControlStateNormal];
+        NSLog(@"%@", plus);
+    }
+    button.layer.shadowRadius = 10;
+    button.layer.cornerRadius = 30;
+    button.layer.shadowOpacity = 0.3;
+    
+    [self.view addSubview:button];
+}
+
+- (void) onComposeTweetPress:(UIButton *)composeTweetButton {
+    [self performSegueWithIdentifier:@"triggerComposeTweetView" sender:composeTweetButton];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -78,7 +106,6 @@
     cell.profilePicture.layer.masksToBounds = false;
     cell.profilePicture.layer.cornerRadius = cell.profilePicture.frame.size.width/2;
     cell.profilePicture.clipsToBounds = true;
-    
     
     return cell;
 }
