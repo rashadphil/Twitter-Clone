@@ -38,7 +38,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tweetText.text = @"What's happening?";
+//    self.tweetText.textColor = [UIColor grayColor];
+    self.tweetText.textColor = [UIColor whiteColor];
+    
+    
 }
+
 
 /*
 #pragma mark - Navigation

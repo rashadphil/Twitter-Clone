@@ -32,7 +32,7 @@
     LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
     appDelegate.window.rootViewController = loginViewController;
     
-    // clear ackess tokens
+    // clear acess tokens
     [[APIManager shared] logout];
 }
 
@@ -41,6 +41,7 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     // refresh capability
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];

@@ -17,7 +17,7 @@
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+//    [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
 }
@@ -74,10 +74,21 @@
      }];
 }
 
+- (NSAttributedString* )createAttributedString:(NSString* )str {
+    UIFont * labelFont = [UIFont fontWithName:@"Helvetica" size:14];
+    NSAttributedString *labelText = [[NSAttributedString alloc] initWithString : str
+                attributes : @{
+                 NSFontAttributeName : labelFont}];
+    return labelText;
+    
+    
+}
+
 - (void)updateRetweetInfo{
     // update count
-    NSAttributedString *retweetCount = [[NSAttributedString alloc] initWithString:([@(self.tweet.retweetCount) stringValue])];
+    NSAttributedString *retweetCount = [self createAttributedString:([@(self.tweet.retweetCount) stringValue])];
     [self.retweetButton setAttributedTitle:retweetCount forState:UIControlStateNormal];
+    
     
     //update color
     UIImage *filledRetweet = [UIImage imageNamed:@"retweet-green"];
@@ -89,7 +100,7 @@
 
 - (void)updateFavoriteInfo{
     // update count
-    NSAttributedString *favoriteCount = [[NSAttributedString alloc] initWithString:([@(self.tweet.favoriteCount) stringValue])];
+    NSAttributedString *favoriteCount = [self createAttributedString:([@(self.tweet.favoriteCount) stringValue])];
     [self.favoriteButton setAttributedTitle:favoriteCount forState:UIControlStateNormal];
     
     //update color
