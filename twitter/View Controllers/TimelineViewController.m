@@ -98,6 +98,7 @@
     cell.tweet = tweet;
     cell.authorName.text = tweet.user.name;
     cell.authorHandle.text = tweet.user.screenName;
+    
     cell.tweetDate.text = tweet.createdAtString;
     cell.tweetText.text = tweet.text;
     

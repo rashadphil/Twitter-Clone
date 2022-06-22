@@ -7,6 +7,7 @@
 //
 
 #import "Tweet.h"
+#import "DateTools.h"
 
 @implementation Tweet
 
@@ -16,10 +17,9 @@
     
     //convert string to date
     NSDate *date = [formatter dateFromString:originalDateStr];
-    formatter.dateStyle = NSDateFormatterShortStyle;
-    formatter.timeStyle = NSDateFormatterNoStyle;
+    NSString *ago = [date shortTimeAgoSinceNow];
+    return ago;
     
-    return [formatter stringFromDate:date];
 }
 
 + (NSMutableArray *)tweetsWithArray:(NSArray *)dictionaries {
