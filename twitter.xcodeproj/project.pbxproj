@@ -33,8 +33,8 @@
 		1F9DC9B028612AFF0035A2D7 /* Tweet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Tweet.m; path = twitter/Models/Tweet.m; sourceTree = SOURCE_ROOT; };
 		1F9DC9B428613C090035A2D7 /* TweetCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TweetCell.h; sourceTree = "<group>"; };
 		1F9DC9B528613C090035A2D7 /* TweetCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = "<group>"; };
-		1F9DC9B728621FB30035A2D7 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ComposeViewController.h; path = "View Controllers/ComposeViewController.h"; sourceTree = "<group>"; };
-		1F9DC9B828621FB30035A2D7 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ComposeViewController.m; path = "View Controllers/ComposeViewController.m"; sourceTree = "<group>"; };
+		1F9DC9B728621FB30035A2D7 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		1F9DC9B828621FB30035A2D7 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		43D6142D6F34C1AE98EE4951 /* libPods-twitter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-twitter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD278D520BC4B950085BC29 /* twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD278D820BC4B950085BC29 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -104,8 +104,6 @@
 				6AD278D820BC4B950085BC29 /* AppDelegate.h */,
 				6AD278D920BC4B950085BC29 /* AppDelegate.m */,
 				6AD278DE20BC4B950085BC29 /* Main.storyboard */,
-				1F9DC9B728621FB30035A2D7 /* ComposeViewController.h */,
-				1F9DC9B828621FB30035A2D7 /* ComposeViewController.m */,
 				1F9DC9B428613C090035A2D7 /* TweetCell.h */,
 				1F9DC9B528613C090035A2D7 /* TweetCell.m */,
 				6AD278E120BC4B970085BC29 /* Assets.xcassets */,
@@ -152,6 +150,8 @@
 				1F9DC9AD286127F00035A2D7 /* User.m */,
 				1F9DC9AF28612AFF0035A2D7 /* Tweet.h */,
 				1F9DC9B028612AFF0035A2D7 /* Tweet.m */,
+				1F9DC9B728621FB30035A2D7 /* ComposeViewController.h */,
+				1F9DC9B828621FB30035A2D7 /* ComposeViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";

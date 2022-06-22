@@ -19,7 +19,6 @@
 @property (nonatomic, strong) NSMutableArray *arrayOfTweets;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-
 @end
 
 @implementation TimelineViewController
@@ -95,12 +94,19 @@
     TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
     Tweet *tweet = self.arrayOfTweets[indexPath.row];
     
+    cell.tweet = tweet;
     cell.authorName.text = tweet.user.name;
     cell.authorHandle.text = tweet.user.screenName;
     cell.tweetDate.text = tweet.createdAtString;
     cell.tweetText.text = tweet.text;
-    cell.favoriteCount.text = [@(tweet.favoriteCount) stringValue];
-    cell.retweetCount.text = [@(tweet.retweetCount) stringValue];
+    
+    NSAttributedString *retweetCount = [[NSAttributedString alloc] initWithString:([@(tweet.retweetCount) stringValue])];
+    
+    [cell.retweetButton setAttributedTitle:retweetCount forState:UIControlStateNormal];
+    
+    // update favorite/retweet counts and color appropriately
+    [cell refreshData];
+
     
     cell.profilePicture.image = [TimelineViewController imageFromUrl:tweet.user.profilePicture];
     
@@ -142,7 +148,6 @@
 - (void)didTweet:(Tweet *)tweet {
     [self.arrayOfTweets insertObject:tweet atIndex:0];
     [self.tableView reloadData];
-    NSLog(@"%@", tweet);
 }
 
 /*
