@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *replyButton;
 @property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
 @property (weak, nonatomic) Tweet *tweet;
+@property (weak, nonatomic) IBOutlet UIImageView *mediaImgView;
 
 // update favorite/retweet counts and color appropriately
 - (void)refreshData;

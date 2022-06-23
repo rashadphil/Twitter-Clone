@@ -71,6 +71,8 @@
     self.postSource.text = tweet.source;
     self.retweetCount.text = [@(tweet.retweetCount) stringValue];
     self.likeCount.text = [@(tweet.favoriteCount) stringValue];
+    NSLog(@"%@", tweet.text);
+    [self refreshData];
 }
 
 - (NSString *)postTimeFromTweet {

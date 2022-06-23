@@ -99,7 +99,6 @@
     
     //convert string to date
     NSDate *date = [formatter dateFromString:originalDateStr];
-//    NSLog(@"%@", date);
     NSString *ago = [date shortTimeAgoSinceNow];
     return ago;
     
@@ -129,12 +128,17 @@
     
     // insert any media (starting with only one)
     NSArray *allMedia = tweet.entity.mediaArray;
+    NSLog(@"%@", tweet.entity.mediaArray);
     if (allMedia.count) {
-//        UIImageView *mediaView = [cell.contentView viewWithTag:<#(NSInteger)#>]
-//        for (Media *media in allMedia) {
-//            UIImage *mediaImg = [TimelineViewController imageFromUrl:media.mediaUrl];
-//            [cell.contentView addSubview:mediaImg];
-//        }
+        Media *media = allMedia[0];
+        UIImage *mediaImg = [TimelineViewController imageFromUrl:media.mediaUrl];
+        NSLog(@"%@", media.mediaUrl);
+        cell.mediaImgView.image = mediaImg;
+        [cell.mediaImgView.layer setCornerRadius:20.0];
+    } else {
+        [cell.mediaImgView setAutoresizingMask:UIViewAutoresizingNone];
+//        cell.mediaImgView.hei
+        cell.mediaImgView.image = nil;
     }
     
     return cell;

@@ -54,6 +54,7 @@
         
         //format date
         self.createdAtString = dictionary[@"created_at"];
+        NSLog(@"%@", self.createdAtString);
         
     }
     return self;
