@@ -88,14 +88,7 @@
     // update count
     NSAttributedString *retweetCount = [self createAttributedString:([@(self.tweet.retweetCount) stringValue])];
     [self.retweetButton setAttributedTitle:retweetCount forState:UIControlStateNormal];
-    
-    
-    //update color
-    UIImage *filledRetweet = [UIImage imageNamed:@"retweet-green"];
-    UIImage *unfilledRetweet = [UIImage imageNamed:@"retweet"];
-    
-    [self.retweetButton
-     setImage:(self.tweet.retweeted ? filledRetweet : unfilledRetweet) forState:UIControlStateNormal];
+    [self.retweetButton setTintColor:(self.tweet.retweeted ? [UIColor systemGreenColor] : [UIColor grayColor])];
 }
 
 - (void)updateFavoriteInfo{
@@ -104,9 +97,11 @@
     [self.favoriteButton setAttributedTitle:favoriteCount forState:UIControlStateNormal];
     
     //update color
-    UIImage *filledFavorite = [UIImage imageNamed:@"favorite-red"];
-    UIImage *unfilledFavorite = [UIImage imageNamed:@"favorite"];
-    [self.favoriteButton setImage:self.tweet.favorited ? filledFavorite : unfilledFavorite forState:UIControlStateNormal];
+    UIImage *filledFavorite = [UIImage systemImageNamed:@"heart.fill"];
+    UIImage *redFavorite = [filledFavorite imageWithTintColor:[UIColor systemRedColor] renderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *unfilledFavorite = [UIImage systemImageNamed:@"heart"];
+    [self.favoriteButton setImage:self.tweet.favorited ? redFavorite : unfilledFavorite forState:UIControlStateNormal];
+    [self.favoriteButton setTintColor:(self.tweet.favorited ? [UIColor systemRedColor] : [UIColor grayColor])];
 }
 
 @end

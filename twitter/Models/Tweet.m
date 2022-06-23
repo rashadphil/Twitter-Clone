@@ -11,17 +11,6 @@
 
 @implementation Tweet
 
-+ (NSString *)formatDateString:(NSString *)originalDateStr {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
-    
-    //convert string to date
-    NSDate *date = [formatter dateFromString:originalDateStr];
-    NSString *ago = [date shortTimeAgoSinceNow];
-    return ago;
-    
-}
-
 + (NSMutableArray *)tweetsWithArray:(NSArray *)dictionaries {
     NSMutableArray *tweets = [NSMutableArray array];
     for (NSDictionary *dictionary in dictionaries) {
@@ -29,6 +18,11 @@
         [tweets addObject:tweet];
     }
     return tweets;
+}
+
++ (NSString *)extractTextFromHtmlTag:(NSString *)htmlTag {
+    NSArray *components = [htmlTag componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    return components[2];
 }
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
@@ -50,14 +44,14 @@
         self.retweetCount = [dictionary[@"retweet_count"] intValue];
         self.replyCount = [dictionary[@"reply_count"] intValue];
         self.retweeted = [dictionary[@"retweeted"] boolValue];
+        self.source = [Tweet extractTextFromHtmlTag: dictionary[@"source"]];
         
         //initialize user
         NSDictionary *user = dictionary[@"user"];
         self.user = [[User alloc] initWithDictionary:user];
         
         //format date
-        NSString *createdAtOriginalString = dictionary[@"created_at"];
-        self.createdAtString = [Tweet formatDateString:createdAtOriginalString];
+        self.createdAtString = dictionary[@"created_at"];
         
     }
     return self;

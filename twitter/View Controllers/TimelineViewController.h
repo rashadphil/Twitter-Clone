@@ -10,4 +10,6 @@
 
 @interface TimelineViewController : UIViewController
 
++ (UIImage * )imageFromUrl:(NSString*)URLString;
+
 @end

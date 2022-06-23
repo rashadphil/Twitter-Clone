@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c3O-zL-0ZQ">
-    <device id="retina6_0" orientation="landscape" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Uya-in-Ply"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Oyf-Hu-DjK">
-                        <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNt-Be-gi1">
-                                <rect key="frame" x="32" y="165" width="780" height="60"/>
+                                <rect key="frame" x="32" y="392" width="326" height="60"/>
                                 <color key="backgroundColor" red="0.1137254902" green="0.55294117649999996" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="EfS-pm-fmn"/>
@@ -32,7 +34,7 @@
                                 </connections>
                             </button>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="TwitterLogoBlue" translatesAutoresizingMaskIntoConstraints="NO" id="KMY-gb-DAH">
-                                <rect key="frame" x="355.33333333333331" y="13" width="133.33333333333331" height="133.33333333333334"/>
+                                <rect key="frame" x="128.33333333333331" y="183.33333333333331" width="133.33333333333331" height="133.33333333333331"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="osx-NC-afp"/>
@@ -51,7 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKJ-HH-8tn" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
+            <point key="canvasLocation" x="1432" y="-827"/>
         </scene>
         <!--Home Timeline-->
         <scene sceneID="1Tv-nE-1AW">
@@ -62,7 +64,7 @@
                         <viewControllerLayoutGuide type="bottom" id="pGj-sa-aq5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qax-2F-Vhk">
-                        <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="fjC-uj-GQF">
@@ -72,16 +74,16 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OQV-gp-nkj">
-                                <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                                 <color key="backgroundColor" red="0.031372549020000001" green="0.031372549020000001" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.4431372549" green="0.46274509800000002" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.031372549020000001" green="0.031372549020000001" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="150" id="3T8-cW-zZt" customClass="TweetCell">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="844" height="150"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3T8-cW-zZt" id="Ot7-HX-v0Q">
-                                            <rect key="frame" x="44" y="0.0" width="756" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="irV-TZ-C0C">
@@ -128,7 +130,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paY-GJ-Wff">
-                                                    <rect key="frame" x="65" y="33.333333333333336" width="679" height="18"/>
+                                                    <rect key="frame" x="65" y="33.333333333333336" width="313" height="18"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Some great suggestions in the comments!">
                                                             <attributes>
@@ -141,7 +143,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOd-Dr-BqA">
-                                                    <rect key="frame" x="55" y="61.333333333333343" width="90" height="30"/>
+                                                    <rect key="frame" x="55" y="61.333333333333343" width="90" height="25"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" button="YES" image="YES"/>
                                                     </accessibility>
@@ -149,30 +151,33 @@
                                                         <constraint firstAttribute="width" constant="90" id="sN4-Kt-uof"/>
                                                     </constraints>
                                                     <color key="tintColor" red="0.4431372549" green="0.46274509800000002" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="reply" imagePlacement="leading" imagePadding="3" buttonSize="mini">
+                                                    <buttonConfiguration key="configuration" style="plain" imagePadding="4" buttonSize="mini">
+                                                        <imageReference key="image" image="message" catalog="system" symbolScale="medium"/>
                                                         <attributedString key="attributedTitle">
                                                             <fragment content="0">
                                                                 <attributes>
-                                                                    <font key="NSFont" size="13" name="Helvetica"/>
+                                                                    <font key="NSFont" size="13" name="HelveticaNeue"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
                                                         </attributedString>
+                                                        <color key="baseForegroundColor" red="0.4431372549" green="0.46274509800000002" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </buttonConfiguration>
                                                     <connections>
                                                         <action selector="didTapReply:" destination="3T8-cW-zZt" eventType="touchUpInside" id="5em-oV-eZ8"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNW-U1-sMK">
-                                                    <rect key="frame" x="155" y="61.333333333333343" width="90" height="28"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dNW-U1-sMK">
+                                                    <rect key="frame" x="155" y="61.333333333333336" width="90" height="25.333333333333336"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" button="YES" image="YES"/>
                                                     </accessibility>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="vtr-Tl-zM2"/>
                                                     </constraints>
-                                                    <color key="tintColor" red="0.4431372549" green="0.46274509800000002" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="retweet" imagePadding="4" buttonSize="mini">
+                                                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <buttonConfiguration key="configuration" style="plain" imagePadding="4" buttonSize="mini">
+                                                        <imageReference key="image" image="arrow.2.squarepath" catalog="system" symbolScale="medium"/>
                                                         <attributedString key="attributedTitle">
                                                             <fragment content="3,000">
                                                                 <attributes>
@@ -186,19 +191,20 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bT4-xZ-g2F">
-                                                    <rect key="frame" x="251" y="61.333333333333343" width="90" height="28"/>
+                                                    <rect key="frame" x="251" y="61.333333333333343" width="90" height="25"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" button="YES" image="YES"/>
                                                     </accessibility>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="0tV-Wa-LGp"/>
                                                     </constraints>
-                                                    <color key="tintColor" red="0.4431372549" green="0.46274509800000002" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="favorite" imagePadding="3" buttonSize="mini">
+                                                    <color key="tintColor" red="0.4431372549" green="0.46274509800000002" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <buttonConfiguration key="configuration" style="plain" imagePadding="4" buttonSize="mini">
+                                                        <imageReference key="image" image="heart" catalog="system" symbolScale="medium"/>
                                                         <attributedString key="attributedTitle">
                                                             <fragment content="3,000">
                                                                 <attributes>
-                                                                    <font key="NSFont" size="13" name="Helvetica"/>
+                                                                    <font key="NSFont" size="13" name="HelveticaNeue"/>
                                                                 </attributes>
                                                             </fragment>
                                                         </attributedString>
@@ -239,6 +245,7 @@
                                             <outlet property="retweetButton" destination="dNW-U1-sMK" id="XHO-bd-lX1"/>
                                             <outlet property="tweetDate" destination="Wgg-p3-rFW" id="R3t-Uu-CW2"/>
                                             <outlet property="tweetText" destination="paY-GJ-Wff" id="xD5-MR-yT1"/>
+                                            <segue destination="T6I-On-B5c" kind="presentation" identifier="triggerTweetDetailView" id="3eh-NL-Oye"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -256,7 +263,7 @@
                     <navigationItem key="navigationItem" title="Home Timeline" id="MOc-fV-EZE">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="mei-63-Hgb">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="fLw-DB-ixE">
-                                <rect key="frame" x="697" y="0.0" width="83" height="32"/>
+                                <rect key="frame" x="291" y="11" width="83" height="34.333333333333336"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Logout"/>
@@ -273,14 +280,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQh-hN-GQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1659.9526066350711" y="35.384615384615387"/>
+            <point key="canvasLocation" x="1658.4615384615383" y="34.834123222748815"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="795-m4-KZW">
             <objects>
                 <viewController id="vzS-UP-n0P" customClass="ComposeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w9Q-Jq-Ebe">
-                        <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qOb-GQ-Tui">
@@ -314,7 +321,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="7NQ-yE-0GN">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="BNv-9u-TIj">
-                                <rect key="frame" x="694" y="0.66666666666666785" width="86" height="31"/>
+                                <rect key="frame" x="288" y="12.666666666666664" width="86" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
@@ -350,7 +357,7 @@
                 <navigationController storyboardIdentifier="TweetsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="FTQ-G1-N2b" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ytz-Ev-cUB">
-                        <rect key="frame" x="0.0" y="0.0" width="844" height="32"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.031372549020000001" green="0.031372549020000001" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.031372549020000001" green="0.031372549020000001" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -364,19 +371,308 @@
             </objects>
             <point key="canvasLocation" x="860" y="36.431784107946029"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Go0-Wz-nmz">
+            <objects>
+                <viewController id="T6I-On-B5c" customClass="DetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R6t-jb-isq">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OLb-uZ-ufY">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="269"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lGi-I5-aaI">
+                                        <rect key="frame" x="23" y="59" width="50" height="50"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P19-yb-h5y">
+                                        <rect key="frame" x="81" y="59.000000000000007" width="85" height="20.333333333333336"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Elon Musk">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20J-DZ-Nuw">
+                                        <rect key="frame" x="81" y="81.333333333333329" width="77" height="17"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="@elonmusk">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.44313725490196076" green="0.46274509803921571" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DuC-iU-l5T">
+                                        <rect key="frame" x="20" y="127" width="362" height="23"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Some great suggestions in the comments! Ok cool">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="22" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JnO-4R-LnW">
+                                        <rect key="frame" x="20.000000000000004" y="167" width="53.333333333333343" height="21"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="2:34 PM">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.44313725490196076" green="0.46274509803921571" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbW-d1-EQz">
+                                        <rect key="frame" x="83.333333333333329" y="170" width="49.333333333333329" height="16"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="6/20/22">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.44313725490196076" green="0.46274509803921571" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PcJ-aa-jfc">
+                                        <rect key="frame" x="142.66666666666666" y="170" width="117.99999999999997" height="16"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Twitter for iPhone">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.098039215686274508" green="0.60784313725490191" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" ambiguous="YES" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oYp-S2-BcF">
+                                        <rect key="frame" x="0.0" y="196" width="386" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHP-ca-VCG">
+                                                <rect key="frame" x="20" y="5" width="25.333333333333329" height="17"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="359">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQ7-dJ-fWY">
+                                                <rect key="frame" x="125" y="4" width="17" height="17"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="42">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1b-VN-5kc">
+                                                <rect key="frame" x="49.333333333333336" y="5" width="67.666666666666657" height="17"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Retweets">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.4431372549" green="0.46274509800000002" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVe-3h-tJV">
+                                                <rect key="frame" x="146" y="4" width="78.333333333333314" height="17"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Comments">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.44313725490196076" green="0.46274509803921571" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05C-Tz-fCi">
+                                                <rect key="frame" x="274" y="4" width="38.333333333333314" height="17"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Likes">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.44313725490196076" green="0.46274509803921571" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHf-dT-81o">
+                                                <rect key="frame" x="232.33333333333334" y="5" width="37.666666666666657" height="17"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="3,849">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.031372549020000001" green="0.031372549020000001" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="RVe-3h-tJV" firstAttribute="top" secondItem="RHP-ca-VCG" secondAttribute="top" id="1ob-r2-IZG"/>
+                                            <constraint firstItem="VQ7-dJ-fWY" firstAttribute="leading" secondItem="f1b-VN-5kc" secondAttribute="trailing" constant="8" id="6UN-Jg-7LY"/>
+                                            <constraint firstItem="rHf-dT-81o" firstAttribute="leading" secondItem="RVe-3h-tJV" secondAttribute="trailing" constant="8" id="BKt-ZL-Hf9"/>
+                                            <constraint firstItem="VQ7-dJ-fWY" firstAttribute="top" secondItem="RHP-ca-VCG" secondAttribute="top" id="Bu7-eD-2wk"/>
+                                            <constraint firstAttribute="height" constant="30" id="GtJ-Iw-Mzi"/>
+                                            <constraint firstItem="RVe-3h-tJV" firstAttribute="leading" secondItem="VQ7-dJ-fWY" secondAttribute="trailing" constant="4" id="LLG-gQ-nou"/>
+                                            <constraint firstItem="05C-Tz-fCi" firstAttribute="leading" secondItem="rHf-dT-81o" secondAttribute="trailing" constant="4" id="LPc-mo-bKJ"/>
+                                            <constraint firstItem="RHP-ca-VCG" firstAttribute="leading" secondItem="oYp-S2-BcF" secondAttribute="leading" constant="20" id="OsQ-Kq-UXv"/>
+                                            <constraint firstItem="05C-Tz-fCi" firstAttribute="top" secondItem="RHP-ca-VCG" secondAttribute="top" id="Y8b-ph-sdY"/>
+                                            <constraint firstItem="f1b-VN-5kc" firstAttribute="top" secondItem="RHP-ca-VCG" secondAttribute="top" id="teA-cA-ZNV"/>
+                                            <constraint firstItem="f1b-VN-5kc" firstAttribute="leading" secondItem="RHP-ca-VCG" secondAttribute="trailing" constant="4" id="xna-v6-SSG"/>
+                                            <constraint firstItem="rHf-dT-81o" firstAttribute="top" secondItem="RHP-ca-VCG" secondAttribute="top" id="yTR-x9-v0R"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWR-yq-6Yf">
+                                        <rect key="frame" x="70" y="230" width="30" height="31"/>
+                                        <color key="tintColor" red="0.4431372549" green="0.46274509800000002" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="message" catalog="system">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content=" ">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="smallSystem"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtC-Ih-Vzr">
+                                        <rect key="frame" x="145.66666666666666" y="230" width="30" height="30"/>
+                                        <color key="tintColor" red="0.4431372549" green="0.46274509800000002" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=" ">
+                                            <imageReference key="image" image="retweet" symbolScale="default"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="didTapRetweet:" destination="T6I-On-B5c" eventType="touchUpInside" id="PTt-b7-jZn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yi-mU-l2t">
+                                        <rect key="frame" x="184.33333333333334" y="230" width="49.333333333333343" height="31"/>
+                                        <color key="tintColor" red="0.4431372549" green="0.46274509800000002" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system" title=" "/>
+                                        <connections>
+                                            <action selector="didTapFavorite:" destination="T6I-On-B5c" eventType="touchUpInside" id="0pe-C0-qLB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VyZ-rb-GpV">
+                                        <rect key="frame" x="258.66666666666669" y="230" width="48.333333333333314" height="31"/>
+                                        <color key="tintColor" red="0.4431372549" green="0.46274509800000002" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system" title=" "/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.031372549020000001" green="0.031372549020000001" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="DuC-iU-l5T" secondAttribute="trailing" constant="8" id="6ux-hm-5qE"/>
+                                    <constraint firstItem="5yi-mU-l2t" firstAttribute="centerY" secondItem="OLb-uZ-ufY" secondAttribute="centerY" id="7E4-PR-QAE"/>
+                                    <constraint firstItem="20J-DZ-Nuw" firstAttribute="top" secondItem="P19-yb-h5y" secondAttribute="bottom" constant="2" id="7rN-TY-hst"/>
+                                    <constraint firstItem="JnO-4R-LnW" firstAttribute="top" secondItem="DuC-iU-l5T" secondAttribute="bottom" constant="25" id="89j-cR-3HM"/>
+                                    <constraint firstItem="5yi-mU-l2t" firstAttribute="top" secondItem="dWR-yq-6Yf" secondAttribute="top" id="A6V-EO-oY1"/>
+                                    <constraint firstItem="dWR-yq-6Yf" firstAttribute="top" secondItem="oYp-S2-BcF" secondAttribute="bottom" constant="4" id="BK6-fI-MXA"/>
+                                    <constraint firstItem="FtC-Ih-Vzr" firstAttribute="leading" secondItem="dWR-yq-6Yf" secondAttribute="trailing" constant="25" id="FEy-8u-g9A"/>
+                                    <constraint firstItem="20J-DZ-Nuw" firstAttribute="leading" secondItem="P19-yb-h5y" secondAttribute="leading" id="Fqg-Iz-Wx8"/>
+                                    <constraint firstItem="JbW-d1-EQz" firstAttribute="leading" secondItem="JnO-4R-LnW" secondAttribute="trailing" constant="10" id="LJt-qY-VWN"/>
+                                    <constraint firstItem="JnO-4R-LnW" firstAttribute="leading" secondItem="DuC-iU-l5T" secondAttribute="leading" id="Qgk-5H-63H"/>
+                                    <constraint firstItem="dWR-yq-6Yf" firstAttribute="leading" secondItem="OLb-uZ-ufY" secondAttribute="leading" constant="40" id="ULp-Rh-ISx"/>
+                                    <constraint firstItem="lGi-I5-aaI" firstAttribute="top" secondItem="OLb-uZ-ufY" secondAttribute="top" constant="59" id="UqV-5b-bRz"/>
+                                    <constraint firstItem="P19-yb-h5y" firstAttribute="top" secondItem="lGi-I5-aaI" secondAttribute="top" id="W7B-YN-5pc"/>
+                                    <constraint firstItem="DuC-iU-l5T" firstAttribute="top" secondItem="lGi-I5-aaI" secondAttribute="bottom" constant="15" id="X1j-Tb-Yiv"/>
+                                    <constraint firstItem="VyZ-rb-GpV" firstAttribute="top" secondItem="dWR-yq-6Yf" secondAttribute="top" id="XNn-fT-1S1"/>
+                                    <constraint firstItem="PcJ-aa-jfc" firstAttribute="leading" secondItem="JbW-d1-EQz" secondAttribute="trailing" constant="10" id="Xyb-b2-XdE"/>
+                                    <constraint firstItem="lGi-I5-aaI" firstAttribute="leading" secondItem="OLb-uZ-ufY" secondAttribute="leading" constant="20" id="bpN-wJ-V7v"/>
+                                    <constraint firstItem="5yi-mU-l2t" firstAttribute="leading" secondItem="FtC-Ih-Vzr" secondAttribute="trailing" constant="25" id="gYw-IP-Lki"/>
+                                    <constraint firstItem="VyZ-rb-GpV" firstAttribute="leading" secondItem="5yi-mU-l2t" secondAttribute="trailing" constant="25" id="hG1-zV-Xh8"/>
+                                    <constraint firstItem="oYp-S2-BcF" firstAttribute="top" secondItem="JnO-4R-LnW" secondAttribute="bottom" constant="25" id="i9c-tl-vnU"/>
+                                    <constraint firstItem="P19-yb-h5y" firstAttribute="leading" secondItem="lGi-I5-aaI" secondAttribute="trailing" constant="8" id="izz-LM-kIS"/>
+                                    <constraint firstItem="FtC-Ih-Vzr" firstAttribute="top" secondItem="dWR-yq-6Yf" secondAttribute="top" id="nBW-a7-8DS"/>
+                                    <constraint firstItem="DuC-iU-l5T" firstAttribute="leading" secondItem="lGi-I5-aaI" secondAttribute="leading" id="nSH-Dr-rzG"/>
+                                    <constraint firstItem="PcJ-aa-jfc" firstAttribute="top" secondItem="JnO-4R-LnW" secondAttribute="top" id="sg3-2c-ftA"/>
+                                    <constraint firstItem="VyZ-rb-GpV" firstAttribute="centerY" secondItem="OLb-uZ-ufY" secondAttribute="centerY" id="v1P-Xz-uuH"/>
+                                    <constraint firstItem="JbW-d1-EQz" firstAttribute="top" secondItem="JnO-4R-LnW" secondAttribute="top" id="vYg-ew-XfL"/>
+                                    <constraint firstItem="FtC-Ih-Vzr" firstAttribute="centerY" secondItem="OLb-uZ-ufY" secondAttribute="centerY" id="woJ-Gd-9wS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="13C-aK-2Mi"/>
+                        <color key="backgroundColor" red="0.031372549020000001" green="0.031372549020000001" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="OLb-uZ-ufY" firstAttribute="leading" secondItem="R6t-jb-isq" secondAttribute="leading" id="04d-6t-fc8"/>
+                            <constraint firstAttribute="trailing" secondItem="OLb-uZ-ufY" secondAttribute="trailing" id="uuT-hd-Dki"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="authorHandle" destination="20J-DZ-Nuw" id="Hlf-tO-XEZ"/>
+                        <outlet property="authorName" destination="P19-yb-h5y" id="Jus-km-zSo"/>
+                        <outlet property="commentCount" destination="VQ7-dJ-fWY" id="tg3-Jm-WCO"/>
+                        <outlet property="likeButton" destination="5yi-mU-l2t" id="F9P-Eg-Yzh"/>
+                        <outlet property="likeCount" destination="rHf-dT-81o" id="BMD-g0-qVo"/>
+                        <outlet property="postDate" destination="JbW-d1-EQz" id="rTM-bS-iJv"/>
+                        <outlet property="postSource" destination="PcJ-aa-jfc" id="mtJ-yR-atv"/>
+                        <outlet property="postTime" destination="JnO-4R-LnW" id="ERO-k9-tpX"/>
+                        <outlet property="profilePicture" destination="lGi-I5-aaI" id="67O-Ty-A3p"/>
+                        <outlet property="retweetButton" destination="FtC-Ih-Vzr" id="QfZ-v0-VSd"/>
+                        <outlet property="retweetCount" destination="RHP-ca-VCG" id="bbC-pr-ZGp"/>
+                        <outlet property="tweetText" destination="DuC-iU-l5T" id="qfI-YN-AX1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gha-qo-eBq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1040" y="741"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="DGP-D9-MfM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hFb-iW-a4m" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="s1V-sg-eul">
-                        <rect key="frame" x="0.0" y="0.0" width="844" height="32"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.031372549020000001" green="0.031372549020000001" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.031372549020000001" green="0.031372549020000001" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rfi-Ms-jsE">
+                        <rect key="frame" x="0.0" y="-54" width="0.0" height="0.0"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
@@ -385,13 +681,32 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bqg-Ov-9MR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2416.9230769230767" y="61.848341232227483"/>
+            <point key="canvasLocation" x="2562" y="62"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Vxl-wU-LgM">
+            <objects>
+                <viewController id="diE-rV-qtf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mx9-GF-7we">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iWF-2g-ANe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="295" y="742"/>
         </scene>
     </scenes>
     <resources>
         <image name="TwitterLogoBlue" width="133.33332824707031" height="133.33332824707031"/>
-        <image name="favorite" width="20" height="18"/>
-        <image name="reply" width="20" height="20"/>
-        <image name="retweet" width="20" height="18"/>
+        <image name="arrow.2.squarepath" catalog="system" width="128" height="89"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="message" catalog="system" width="128" height="113"/>
+        <image name="retweet" width="16" height="12"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

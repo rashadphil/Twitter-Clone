@@ -12,6 +12,8 @@
 #import "LoginViewController.h"
 #import "TweetCell.h"
 #import "ComposeViewController.h"
+#import "DetailViewController.h"
+#import "DateTools.h"
 
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate, ComposeViewControllerDelegate>
 
@@ -90,6 +92,18 @@
     [self performSegueWithIdentifier:@"triggerComposeTweetView" sender:composeTweetButton];
 }
 
++ (NSString *)dateStringToTimeAgo:(NSString *)originalDateStr {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
+    
+    //convert string to date
+    NSDate *date = [formatter dateFromString:originalDateStr];
+//    NSLog(@"%@", date);
+    NSString *ago = [date shortTimeAgoSinceNow];
+    return ago;
+    
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
@@ -99,12 +113,8 @@
     cell.authorName.text = tweet.user.name;
     cell.authorHandle.text = tweet.user.screenName;
     
-    cell.tweetDate.text = tweet.createdAtString;
+    cell.tweetDate.text = [TimelineViewController dateStringToTimeAgo:tweet.createdAtString];
     cell.tweetText.text = tweet.text;
-    
-    NSAttributedString *retweetCount = [[NSAttributedString alloc] initWithString:([@(tweet.retweetCount) stringValue])];
-    
-    [cell.retweetButton setAttributedTitle:retweetCount forState:UIControlStateNormal];
     
     // update favorite/retweet counts and color appropriately
     [cell refreshData];
@@ -141,9 +151,20 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    UINavigationController *navigationController = [segue destinationViewController];
-    ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
-    composeController.delegate = self;
+    // two possible senders -> Compose Button, Tweet Cell
+    NSLog(@"%@", [segue identifier]);
+    if ([[segue identifier] isEqualToString:@"triggerComposeTweetView"]) {
+        
+        UINavigationController *navigationController = [segue destinationViewController];
+        ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
+        composeController.delegate = self;
+        
+    } else if ([[segue identifier] isEqualToString:@"triggerTweetDetailView"]) {
+        NSIndexPath* index = [self.tableView indexPathForCell:sender];
+        Tweet* tweet = self.arrayOfTweets[index.row];
+        DetailViewController *detailVC = [segue destinationViewController];
+        detailVC.tweet = tweet;
+    }
 }
 
 // makes new tweets appear in timeline
