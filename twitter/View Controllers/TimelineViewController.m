@@ -14,6 +14,7 @@
 #import "ComposeViewController.h"
 #import "DetailViewController.h"
 #import "DateTools.h"
+#import "Media.h"
 
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate, ComposeViewControllerDelegate>
 
@@ -119,13 +120,22 @@
     // update favorite/retweet counts and color appropriately
     [cell refreshData];
 
-    
     cell.profilePicture.image = [TimelineViewController imageFromUrl:tweet.user.profilePicture];
     
     //make image circular
     cell.profilePicture.layer.masksToBounds = false;
     cell.profilePicture.layer.cornerRadius = cell.profilePicture.frame.size.width/2;
     cell.profilePicture.clipsToBounds = true;
+    
+    // insert any media (starting with only one)
+    NSArray *allMedia = tweet.entity.mediaArray;
+    if (allMedia.count) {
+//        UIImageView *mediaView = [cell.contentView viewWithTag:<#(NSInteger)#>]
+//        for (Media *media in allMedia) {
+//            UIImage *mediaImg = [TimelineViewController imageFromUrl:media.mediaUrl];
+//            [cell.contentView addSubview:mediaImg];
+//        }
+    }
     
     return cell;
 }

@@ -8,6 +8,7 @@
 
 #import "Tweet.h"
 #import "DateTools.h"
+#import "Media.h"
 
 @implementation Tweet
 
@@ -45,6 +46,7 @@
         self.replyCount = [dictionary[@"reply_count"] intValue];
         self.retweeted = [dictionary[@"retweeted"] boolValue];
         self.source = [Tweet extractTextFromHtmlTag: dictionary[@"source"]];
+        self.entity = [[Entity alloc] initWithDictionary:dictionary[@"entities"]];
         
         //initialize user
         NSDictionary *user = dictionary[@"user"];

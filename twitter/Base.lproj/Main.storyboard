@@ -73,17 +73,17 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OQV-gp-nkj">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="271" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OQV-gp-nkj">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                                 <color key="backgroundColor" red="0.031372549020000001" green="0.031372549020000001" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.4431372549" green="0.46274509800000002" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.031372549020000001" green="0.031372549020000001" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="150" id="3T8-cW-zZt" customClass="TweetCell">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="150"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="271" id="3T8-cW-zZt" customClass="TweetCell">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="271"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3T8-cW-zZt" id="Ot7-HX-v0Q">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="271"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="irV-TZ-C0C">
@@ -213,6 +213,9 @@
                                                         <action selector="didTapFavorite:" destination="3T8-cW-zZt" eventType="touchUpInside" id="jMF-aU-6zE"/>
                                                     </connections>
                                                 </button>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="camera-icon" translatesAutoresizingMaskIntoConstraints="NO" id="KXd-bI-sho">
+                                                    <rect key="frame" x="55" y="124" width="240" height="128"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.031372549019607843" green="0.031372549019607843" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
@@ -224,6 +227,7 @@
                                                 <constraint firstItem="irV-TZ-C0C" firstAttribute="leading" secondItem="Ot7-HX-v0Q" secondAttribute="leading" constant="5" id="Rpa-Cn-MRd"/>
                                                 <constraint firstItem="m4Y-WI-w7f" firstAttribute="top" secondItem="irV-TZ-C0C" secondAttribute="top" id="Se4-Aa-ACU"/>
                                                 <constraint firstItem="Ng6-6u-jeK" firstAttribute="top" secondItem="irV-TZ-C0C" secondAttribute="top" id="Thw-aP-pJR"/>
+                                                <constraint firstItem="KXd-bI-sho" firstAttribute="top" secondItem="paY-GJ-Wff" secondAttribute="bottom" constant="26.666666666666664" id="Twq-nH-5sw"/>
                                                 <constraint firstItem="m4Y-WI-w7f" firstAttribute="leading" secondItem="irV-TZ-C0C" secondAttribute="trailing" constant="10" id="Xel-x6-97i"/>
                                                 <constraint firstItem="gOd-Dr-BqA" firstAttribute="leading" secondItem="paY-GJ-Wff" secondAttribute="leading" constant="-10" id="gjC-3p-M1q"/>
                                                 <constraint firstItem="irV-TZ-C0C" firstAttribute="top" secondItem="Ot7-HX-v0Q" secondAttribute="top" constant="8" id="iox-x2-U7A"/>
@@ -701,6 +705,7 @@
     <resources>
         <image name="TwitterLogoBlue" width="133.33332824707031" height="133.33332824707031"/>
         <image name="arrow.2.squarepath" catalog="system" width="128" height="89"/>
+        <image name="camera-icon" width="30" height="23"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="message" catalog="system" width="128" height="113"/>
         <image name="retweet" width="16" height="12"/>

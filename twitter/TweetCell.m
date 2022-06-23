@@ -80,8 +80,6 @@
                 attributes : @{
                  NSFontAttributeName : labelFont}];
     return labelText;
-    
-    
 }
 
 - (void)updateRetweetInfo{
