@@ -6,6 +6,8 @@
 //  Copyright © 2018 Emerson Malca. All rights reserved.
 //
 
+#define TWITTERBLUE [UIColor colorWithRed:25.0f/255.0f green:155.0f/255.0f blue:239.0f/255.0f alpha:1.0f]
+
 #import "TimelineViewController.h"
 #import "APIManager.h"
 #import "AppDelegate.h"
@@ -15,6 +17,7 @@
 #import "DetailViewController.h"
 #import "DateTools.h"
 #import "Media.h"
+#import <ResponsiveLabel.h>
 
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate, ComposeViewControllerDelegate>
 
@@ -70,9 +73,9 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button addTarget:self action:@selector(onComposeTweetPress:)    forControlEvents:UIControlEventTouchUpInside];
     button.frame = CGRectMake(self.view.frame.size.width - 70, self.view.frame.size.height - 130, 60, 60);
+    
     // twitter color
-    button.backgroundColor = [UIColor colorWithRed:25.0f/255.0f
-        green:155.0f/255.0f blue:239.0f/255.0f alpha:1.0f];
+    button.backgroundColor = TWITTERBLUE;
     
     button.tintColor = [UIColor whiteColor];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -104,6 +107,15 @@
     
 }
 
++ (void)detectUserHandles:(ResponsiveLabel *)label{
+//    label.userInteractionEnabled = YES;
+    PatternTapResponder handleTapAction = ^(NSString *tappedString) {
+        NSLog(@"Handle Tapped = %@",tappedString);
+    };
+    [label enableUserHandleDetectionWithAttributes:
+    @{NSForegroundColorAttributeName:TWITTERBLUE, RLTapResponderAttributeName:handleTapAction}];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
@@ -115,6 +127,7 @@
     
     cell.tweetDate.text = [TimelineViewController dateStringToTimeAgo:tweet.createdAtString];
     cell.tweetText.text = tweet.text;
+    [TimelineViewController detectUserHandles:cell.tweetText];
     
     // update favorite/retweet counts and color appropriately
     [cell refreshData];
@@ -123,25 +136,26 @@
     
     //make image circular
     cell.profilePicture.layer.masksToBounds = false;
-    cell.profilePicture.layer.cornerRadius = cell.profilePicture.frame.size.width/2;
+    [cell.profilePicture.layer setCornerRadius:25];
     cell.profilePicture.clipsToBounds = true;
     
+    [self insertMediaFromTweetCell:cell];
+    
+    return cell;
+}
+
+- (void)insertMediaFromTweetCell:(TweetCell *)cell {
     // insert any media (starting with only one)
-    NSArray *allMedia = tweet.entity.mediaArray;
-    NSLog(@"%@", tweet.entity.mediaArray);
+    NSArray *allMedia = cell.tweet.entity.mediaArray;
     if (allMedia.count) {
         Media *media = allMedia[0];
         UIImage *mediaImg = [TimelineViewController imageFromUrl:media.mediaUrl];
-        NSLog(@"%@", media.mediaUrl);
         cell.mediaImgView.image = mediaImg;
         [cell.mediaImgView.layer setCornerRadius:20.0];
     } else {
         [cell.mediaImgView setAutoresizingMask:UIViewAutoresizingNone];
-//        cell.mediaImgView.hei
         cell.mediaImgView.image = nil;
     }
-    
-    return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

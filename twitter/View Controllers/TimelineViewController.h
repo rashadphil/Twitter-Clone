@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ResponsiveLabel.h>
 
 @interface TimelineViewController : UIViewController
 
 + (UIImage * )imageFromUrl:(NSString*)URLString;
++ (void)detectUserHandles:(ResponsiveLabel *)label;
 
 @end

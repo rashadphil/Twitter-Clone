@@ -9,11 +9,12 @@
 #import "DetailViewController.h"
 #import "TimelineViewController.h"
 #import "APIManager.h"
+#import "Media.h"
 
 @interface DetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *authorName;
 @property (weak, nonatomic) IBOutlet UILabel *authorHandle;
-@property (weak, nonatomic) IBOutlet UILabel *tweetText;
+@property (weak, nonatomic) IBOutlet ResponsiveLabel *tweetText;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
 @property (weak, nonatomic) IBOutlet UILabel *postTime;
 @property (weak, nonatomic) IBOutlet UILabel *postDate;
@@ -23,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *likeCount;
 @property (weak, nonatomic) IBOutlet UIButton *retweetButton;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
+@property (weak, nonatomic) IBOutlet UIImageView *mediaImgView;
 
 @end
 
@@ -66,13 +68,37 @@
     self.authorName.text = tweet.user.name;
     self.authorHandle.text = tweet.user.screenName;
     self.tweetText.text = tweet.text;
-    self.profilePicture.image = [TimelineViewController imageFromUrl:tweet.user.profilePicture];
+    [TimelineViewController detectUserHandles:self.tweetText];
+    
     self.postTime.text = [self postTimeFromTweet];
     self.postSource.text = tweet.source;
     self.retweetCount.text = [@(tweet.retweetCount) stringValue];
     self.likeCount.text = [@(tweet.favoriteCount) stringValue];
-    NSLog(@"%@", tweet.text);
+    
+    self.profilePicture.image = [TimelineViewController imageFromUrl:tweet.user.profilePicture];
+    //make image circular
+    self.profilePicture.layer.masksToBounds = false;
+    [self.profilePicture.layer setCornerRadius:25];
+    self.profilePicture.clipsToBounds = true;
+    
+    [self insertMedia];
+    
     [self refreshData];
+}
+
+- (void)insertMedia{
+    NSArray *allMedia = self.tweet.entity.mediaArray;
+    if (allMedia.count) {
+        Media *media = allMedia[0];
+        UIImage *mediaImg = [TimelineViewController imageFromUrl:media.mediaUrl];
+        self.mediaImgView.image = mediaImg;
+        [self.mediaImgView.layer setCornerRadius:20.0];
+    } else {
+        [self.mediaImgView setAutoresizingMask:UIViewAutoresizingNone];
+        self.mediaImgView.frame = CGRectZero;
+//        self.mediaImgView = nil;
+//        self.mediaImgView.image = nil;
+    }
 }
 
 - (NSString *)postTimeFromTweet {

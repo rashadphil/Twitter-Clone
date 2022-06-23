@@ -16,7 +16,10 @@
     if (self) {
         self.name = dictionary[@"name"];
         self.screenName = [@"@" stringByAppendingString:dictionary[@"screen_name"]];
-        self.profilePicture = dictionary[@"profile_image_url_https"];
+        
+        NSString *blurryProfileUrl = dictionary[@"profile_image_url_https"];
+        self.profilePicture = [blurryProfileUrl stringByReplacingOccurrencesOfString:@"_normal" withString:@""];
+                               
         self.profileBanner = dictionary[@"profile_banner_url"];
         self.location = dictionary[@"location"];
         self.profileDescription = dictionary[@"description"];
