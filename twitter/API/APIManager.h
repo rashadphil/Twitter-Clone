@@ -9,8 +9,11 @@
 #import "BDBOAuth1SessionManager.h"
 #import "BDBOAuth1SessionManager+SFAuthenticationSession.h"
 #import "Tweet.h"
+#import "User.h"
 
 @interface APIManager : BDBOAuth1SessionManager
+
+@property (nonatomic, strong) User *loggedInUser;
 
 + (instancetype)shared;
 

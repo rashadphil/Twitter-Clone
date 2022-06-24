@@ -8,12 +8,14 @@
 
 #import "ComposeViewController.h"
 #import "ApiManager.h"
+#import "TimelineViewController.h"
 
-@interface ComposeViewController ()
+@interface ComposeViewController () <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *tweetButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
 @property (weak, nonatomic) IBOutlet UITextView *tweetText;
+@property (weak, nonatomic) IBOutlet UILabel *placeholderLabel;
 
 @end
 
@@ -24,6 +26,7 @@
 }
 
 - (IBAction)postTweet:(id)sender {
+    
     NSString *postText = self.tweetText.text;
     [[APIManager shared] postStatusWithText:postText completion:^(Tweet *tweet, NSError *error) {
         if (tweet) {
@@ -35,14 +38,21 @@
     }];
 }
 
+- (void)textViewDidChange:(UITextView *)textView {
+    [self.placeholderLabel setHidden:(textView.text.length != 0)];
+}
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tweetText.text = @"What's happening?";
-//    self.tweetText.textColor = [UIColor grayColor];
+    self.tweetText.delegate = self;
+    
+    self.tweetText.text = @"";
+    User *user = [APIManager shared].loggedInUser;
+    self.profilePicture.image = [TimelineViewController imageFromUrl:user.profilePicture];
+    [self.profilePicture.layer setCornerRadius:25];
     self.tweetText.textColor = [UIColor whiteColor];
-    
-    
 }
 
 

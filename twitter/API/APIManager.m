@@ -47,7 +47,10 @@ static NSString * const baseURLString = @"https://api.twitter.com";
     
     self = [super initWithBaseURL:baseURL consumerKey:key consumerSecret:secret];
     if (self) {
-        
+        [self getLoggedInUser:^(User *user, NSError *error){
+            self.loggedInUser = user;
+            NSLog(@"%@", self.loggedInUser);
+        }];
     }
     return self;
 }
@@ -64,6 +67,7 @@ static NSString * const baseURLString = @"https://api.twitter.com";
        completion(nil, error);
    }];
 }
+
 - (void)getUserTimeLineWithCompletion:(User *)user completion:(void(^)(NSArray *tweets, NSError *error))completion {
     
     [self GET:@"1.1/statuses/user_timeline.json"
@@ -87,6 +91,19 @@ static NSString * const baseURLString = @"https://api.twitter.com";
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             completion(nil, error);
     }];
+}
+- (void)getLoggedInUser:(void (^)(User *, NSError *))completion {
+    NSString *urlString = @"1.1/account/verify_credentials.json";
+    
+    [self GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nullable userObject) {
+       
+        User * user = [[User alloc] initWithDictionary:userObject];
+//        self.loggedInUser = user;
+        completion(user, nil);
+       
+   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+       completion(nil, error);
+   }];
 }
 
 - (void)toggleFavorite:(Tweet *)tweet completion:(void (^)(Tweet *, NSError *))completion {
