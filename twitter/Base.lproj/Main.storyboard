@@ -467,7 +467,7 @@
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DuC-iU-l5T" customClass="ResponsiveLabel">
-                                        <rect key="frame" x="20" y="95" width="362" height="53"/>
+                                        <rect key="frame" x="20" y="95" width="362" height="51.333333333333343"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Some great suggestions in the comments! Ok cool">
                                                 <attributes>
@@ -851,9 +851,8 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jKj-Ns-axC">
-                                <rect key="frame" x="0.0" y="410" width="390" height="434"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jKj-Ns-axC">
+                                <rect key="frame" x="0.0" y="329" width="390" height="515"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="134" id="aSS-vz-bxx" customClass="TweetCell">
@@ -1044,36 +1043,26 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zKg-rq-yMA">
-                                <rect key="frame" x="0.0" y="320" width="390" height="32"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <segments>
-                                    <segment title="Tweets"/>
-                                    <segment title="Tweets &amp; replies"/>
-                                    <segment title="Media"/>
-                                    <segment title="Likes"/>
-                                </segments>
-                                <color key="tintColor" systemColor="systemRedColor"/>
-                                <color key="selectedSegmentTintColor" systemColor="linkColor"/>
-                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LbU-0o-Qlh"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="jKj-Ns-axC" firstAttribute="top" secondItem="lnh-sZ-76R" secondAttribute="bottom" constant="30" id="3RV-cw-wGw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1dP-Dd-7TQ" secondAttribute="trailing" constant="10" id="4Ew-jP-GCh"/>
                             <constraint firstItem="nd1-st-Yet" firstAttribute="leading" secondItem="RWo-Bi-rMn" secondAttribute="trailing" constant="13" id="7fc-3u-aPo"/>
                             <constraint firstItem="1dP-Dd-7TQ" firstAttribute="top" secondItem="OqD-uG-Kzn" secondAttribute="bottom" constant="8" id="BrI-WZ-JIf"/>
                             <constraint firstItem="OqD-uG-Kzn" firstAttribute="leading" secondItem="CcW-mE-LG8" secondAttribute="leadingMargin" constant="10" id="LdD-Ku-ZrN"/>
-                            <constraint firstItem="zKg-rq-yMA" firstAttribute="leading" secondItem="CcW-mE-LG8" secondAttribute="leading" id="Lfa-Bt-BjB"/>
                             <constraint firstItem="lnh-sZ-76R" firstAttribute="top" secondItem="IEq-mt-iJ4" secondAttribute="bottom" constant="8" id="MKk-Nt-ZjX"/>
                             <constraint firstItem="1dP-Dd-7TQ" firstAttribute="leading" secondItem="OqD-uG-Kzn" secondAttribute="leading" id="Nb2-ML-mOw"/>
+                            <constraint firstItem="jKj-Ns-axC" firstAttribute="leading" secondItem="LbU-0o-Qlh" secondAttribute="leading" id="OaE-gV-20w"/>
                             <constraint firstItem="DjI-VN-yXk" firstAttribute="top" secondItem="1dP-Dd-7TQ" secondAttribute="bottom" constant="2" id="RaL-WW-X8l"/>
                             <constraint firstItem="Hmx-Ge-bcd" firstAttribute="leading" secondItem="OqD-uG-Kzn" secondAttribute="leading" id="Sep-ES-87Z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Hmx-Ge-bcd" secondAttribute="trailing" constant="10" id="WHN-Oe-D4p"/>
                             <constraint firstItem="RWo-Bi-rMn" firstAttribute="top" secondItem="lnh-sZ-76R" secondAttribute="top" id="Y9E-vt-02l"/>
+                            <constraint firstAttribute="bottom" secondItem="jKj-Ns-axC" secondAttribute="bottom" id="ZmM-cT-ZnV"/>
                             <constraint firstItem="nd1-st-Yet" firstAttribute="top" secondItem="lnh-sZ-76R" secondAttribute="top" id="exf-Xq-qg6"/>
-                            <constraint firstAttribute="trailing" secondItem="zKg-rq-yMA" secondAttribute="trailing" id="fZk-W0-Za1"/>
                             <constraint firstItem="IEq-mt-iJ4" firstAttribute="top" secondItem="Hmx-Ge-bcd" secondAttribute="bottom" constant="8" id="fz7-Zf-DYh"/>
+                            <constraint firstItem="jKj-Ns-axC" firstAttribute="trailing" secondItem="LbU-0o-Qlh" secondAttribute="trailing" id="g0z-YU-9Xz"/>
                             <constraint firstItem="33P-cv-YQi" firstAttribute="top" secondItem="lnh-sZ-76R" secondAttribute="top" id="gLK-lx-0ER"/>
                             <constraint firstItem="33P-cv-YQi" firstAttribute="leading" secondItem="nd1-st-Yet" secondAttribute="trailing" constant="4" id="hCK-sC-zLP"/>
                             <constraint firstItem="IEq-mt-iJ4" firstAttribute="leading" secondItem="OqD-uG-Kzn" secondAttribute="leading" id="j1T-QQ-Qys"/>
@@ -1082,7 +1071,6 @@
                             <constraint firstItem="Hmx-Ge-bcd" firstAttribute="top" secondItem="DjI-VN-yXk" secondAttribute="bottom" constant="15" id="rzZ-92-vwT"/>
                             <constraint firstItem="OqD-uG-Kzn" firstAttribute="top" secondItem="LbU-0o-Qlh" secondAttribute="top" constant="14" id="s3y-0R-aUY"/>
                             <constraint firstItem="lnh-sZ-76R" firstAttribute="leading" secondItem="OqD-uG-Kzn" secondAttribute="leading" id="vw3-QA-c3X"/>
-                            <constraint firstItem="zKg-rq-yMA" firstAttribute="top" secondItem="lnh-sZ-76R" secondAttribute="bottom" constant="21" id="xgb-2E-DIt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2mQ-WG-0fi"/>
@@ -1146,9 +1134,6 @@
         <designable name="DuC-iU-l5T">
             <size key="intrinsicContentSize" width="498" height="27"/>
         </designable>
-        <designable name="paY-GJ-Wff">
-            <size key="intrinsicContentSize" width="292.33333333333331" height="18"/>
-        </designable>
     </designables>
     <resources>
         <image name="TwitterLogoBlue" width="133.33332824707031" height="133.33332824707031"/>
@@ -1159,14 +1144,8 @@
         <image name="message" catalog="system" width="128" height="113"/>
         <image name="retweet" width="16" height="12"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
