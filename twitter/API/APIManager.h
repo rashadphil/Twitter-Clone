@@ -20,4 +20,6 @@
 - (void)toggleRetweet:(Tweet *)tweet completion:(void (^)(Tweet *, NSError *))completion;
 
 - (void)postStatusWithText:(NSString *)text completion:(void (^)(Tweet *, NSError *))completion;
+
+- (void)getUserTimeLineWithCompletion:(User *)user completion:(void(^)(NSArray *tweets, NSError *error))completion;
 @end

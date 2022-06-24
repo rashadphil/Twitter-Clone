@@ -13,5 +13,6 @@
 
 + (UIImage * )imageFromUrl:(NSString*)URLString;
 + (void)detectUserHandles:(ResponsiveLabel *)label;
++ (NSString *)dateStringToTimeAgo:(NSString *)originalDateStr;	
 
 @end

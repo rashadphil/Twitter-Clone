@@ -64,6 +64,18 @@ static NSString * const baseURLString = @"https://api.twitter.com";
        completion(nil, error);
    }];
 }
+- (void)getUserTimeLineWithCompletion:(User *)user completion:(void(^)(NSArray *tweets, NSError *error))completion {
+    
+    [self GET:@"1.1/statuses/user_timeline.json"
+   parameters:@{@"screen_name": user.screenName, @"count": @200} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray *  _Nullable tweetDictionaries) {
+       
+        NSMutableArray *tweets= [Tweet tweetsWithArray:tweetDictionaries];
+        completion(tweets, nil);
+       
+   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+       completion(nil, error);
+   }];
+}
 
 - (void)postStatusWithText:(NSString *)text completion:(void (^)(Tweet *, NSError *))completion {
     NSString *urlString = @"1.1/statuses/update.json";

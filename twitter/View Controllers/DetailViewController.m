@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *retweetButton;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UIImageView *mediaImgView;
+@property (weak, nonatomic) IBOutlet UIImageView *verifiedView;
 
 @end
 
@@ -81,6 +82,10 @@
     [self.profilePicture.layer setCornerRadius:25];
     self.profilePicture.clipsToBounds = true;
     
+    if (!tweet.user.verified) {
+        self.verifiedView.image = nil;
+    }
+    
     [self insertMedia];
     
     [self refreshData];
@@ -94,10 +99,8 @@
         self.mediaImgView.image = mediaImg;
         [self.mediaImgView.layer setCornerRadius:20.0];
     } else {
-        [self.mediaImgView setAutoresizingMask:UIViewAutoresizingNone];
-        self.mediaImgView.frame = CGRectZero;
-//        self.mediaImgView = nil;
-//        self.mediaImgView.image = nil;
+        [self.mediaImgView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
+        self.mediaImgView.image = nil;
     }
 }
 

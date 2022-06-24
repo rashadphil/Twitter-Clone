@@ -12,6 +12,7 @@
 #import "APIManager.h"
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "ProfileViewController.h"
 #import "TweetCell.h"
 #import "ComposeViewController.h"
 #import "DetailViewController.h"
@@ -19,7 +20,7 @@
 #import "Media.h"
 #import <ResponsiveLabel.h>
 
-@interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate, ComposeViewControllerDelegate>
+@interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate, ComposeViewControllerDelegate, TweetCellDelegate>
 
 
 @property (nonatomic, strong) NSMutableArray *arrayOfTweets;
@@ -40,6 +41,11 @@
     
     // clear acess tokens
     [[APIManager shared] logout];
+}
+
+// for loading profile view
+- (void)tweetCell:(TweetCell *)tweetCell didTap:(User *)user{
+    [self performSegueWithIdentifier:@"triggerProfileView" sender:user];
 }
 
 - (void)viewDidLoad {
@@ -83,7 +89,6 @@
     if (@available(iOS 13.0, *)) {
         UIImage *plus = [UIImage systemImageNamed:@"plus"];
         [button setImage:plus forState: UIControlStateNormal];
-        NSLog(@"%@", plus);
     }
     button.layer.shadowRadius = 10;
     button.layer.cornerRadius = 30;
@@ -127,7 +132,11 @@
     
     cell.tweetDate.text = [TimelineViewController dateStringToTimeAgo:tweet.createdAtString];
     cell.tweetText.text = tweet.text;
-    [TimelineViewController detectUserHandles:cell.tweetText];
+    
+    tweet.user.verified ? [cell.verifiedView setHidden:false] : [cell.verifiedView setHidden:true];
+    
+    // colors @handle but causes layout issues :(
+    //    [TimelineViewController detectUserHandles:cell.tweetText];
     
     // update favorite/retweet counts and color appropriately
     [cell refreshData];
@@ -138,6 +147,8 @@
     cell.profilePicture.layer.masksToBounds = false;
     [cell.profilePicture.layer setCornerRadius:25];
     cell.profilePicture.clipsToBounds = true;
+    
+    cell.delegate = self;
     
     [self insertMediaFromTweetCell:cell];
     
@@ -179,8 +190,8 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // two possible senders -> Compose Button, Tweet Cell
-    NSLog(@"%@", [segue identifier]);
+    
+    // three possible senders -> Compose Button, Tweet Cell, User Profile
     if ([[segue identifier] isEqualToString:@"triggerComposeTweetView"]) {
         
         UINavigationController *navigationController = [segue destinationViewController];
@@ -192,6 +203,12 @@
         Tweet* tweet = self.arrayOfTweets[index.row];
         DetailViewController *detailVC = [segue destinationViewController];
         detailVC.tweet = tweet;
+        
+    } else if ([[segue identifier] isEqualToString:@"triggerProfileView"]) {
+        User *user = sender;
+        ProfileViewController *profileVC = [segue destinationViewController];
+        profileVC.user = user;
+        
     }
 }
 

@@ -24,8 +24,9 @@
         self.location = dictionary[@"location"];
         self.profileDescription = dictionary[@"description"];
         self.id = [dictionary[@"id"] intValue];
-        self.followersCount = [dictionary[@"followersCount"] intValue];
-        self.friendsCount = [dictionary[@"friendsCount"] intValue];
+        self.followersCount = [dictionary[@"followers_count"] intValue];
+        self.friendsCount = [dictionary[@"friends_count"] intValue];
+        self.verified = [dictionary[@"verified"] boolValue];
     }
     return self;
 }

@@ -9,11 +9,15 @@
 #import "TweetCell.h"
 #import "APIManager.h"
 
+
 @implementation TweetCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    UITapGestureRecognizer *profileTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapUserProfile:)];
+    [self.profilePicture addGestureRecognizer:profileTapGestureRecognizer];
+    [self.profilePicture setUserInteractionEnabled:true];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -21,6 +25,12 @@
 
     // Configure the view for the selected state
 }
+
+- (void) didTapUserProfile:(UITapGestureRecognizer *)sender{
+    [self.delegate tweetCell:self didTap:self.tweet.user];
+}
+
+
 - (IBAction)didTapFavorite:(id)sender {
     if (self.tweet.favorited) {
         self.tweet.favoriteCount -= 1;
@@ -47,7 +57,6 @@
 }
 
 - (void)refreshData{
-    
     [self updateFavoriteInfo];
     [self updateRetweetInfo];
     

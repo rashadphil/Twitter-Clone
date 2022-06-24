@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *profileBanner;
 @property (nonatomic, strong) NSString *location;
 @property (nonatomic, strong) NSString *profileDescription;
+@property (nonatomic) BOOL verified;
 @property (nonatomic) int id;
 @property (nonatomic) int followersCount;
 @property (nonatomic) int friendsCount;
