@@ -42,8 +42,9 @@
     self.username.text = user.name;
     self.userHandle.text = user.screenName;
     self.profileDescription.text = user.profileDescription;
-    self.followerCount.text = [@(user.followersCount) stringValue];
-    self.followingCount.text = [@(user.friendsCount) stringValue];
+    
+    self.followerCount.text = [TweetCell twitterFormattedNumber:([@(user.followersCount) stringValue])];
+    self.followingCount.text = [TweetCell twitterFormattedNumber:([@(user.friendsCount) stringValue])];
     
     [self.profilePicture.layer setCornerRadius:28];
     
