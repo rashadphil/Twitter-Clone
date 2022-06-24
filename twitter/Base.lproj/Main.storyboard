@@ -156,12 +156,12 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dNW-U1-sMK">
-                                                    <rect key="frame" x="165" y="92.333333333333329" width="90" height="25.333333333333329"/>
+                                                    <rect key="frame" x="165" y="92.333333333333329" width="95" height="25.333333333333329"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" button="YES" image="YES"/>
                                                     </accessibility>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="90" id="vtr-Tl-zM2"/>
+                                                        <constraint firstAttribute="width" constant="95" id="vtr-Tl-zM2"/>
                                                     </constraints>
                                                     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <buttonConfiguration key="configuration" style="plain" imagePadding="4" buttonSize="mini">
@@ -179,12 +179,12 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bT4-xZ-g2F">
-                                                    <rect key="frame" x="261" y="92.333333333333329" width="90" height="25"/>
+                                                    <rect key="frame" x="266" y="92.333333333333329" width="95" height="25"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" button="YES" image="YES"/>
                                                     </accessibility>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="90" id="0tV-Wa-LGp"/>
+                                                        <constraint firstAttribute="width" constant="95" id="0tV-Wa-LGp"/>
                                                     </constraints>
                                                     <color key="tintColor" red="0.4431372549" green="0.46274509800000002" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <buttonConfiguration key="configuration" style="plain" imagePadding="4" buttonSize="mini">

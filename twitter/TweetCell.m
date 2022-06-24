@@ -9,7 +9,6 @@
 #import "TweetCell.h"
 #import "APIManager.h"
 
-
 @implementation TweetCell
 
 - (void)awakeFromNib {
@@ -24,6 +23,20 @@
 //    [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
++ (NSString *)twitterFormattedNumber:(NSString *)numberString{
+    double number = [numberString doubleValue];
+    double thousand = number / 1000;
+    double million = number / (1000 * 1000);
+    if (million >= 1) {
+        return [[@(round(million * 10)/10) stringValue] stringByAppendingString:@"M"];
+    } else if (thousand >= 1) {
+        return [[@(round(thousand * 10)/10) stringValue] stringByAppendingString:@"K"];
+    } else {
+        return numberString;
+    }
+        
 }
 
 - (void) didTapUserProfile:(UITapGestureRecognizer *)sender{
@@ -93,14 +106,18 @@
 
 - (void)updateRetweetInfo{
     // update count
-    NSAttributedString *retweetCount = [self createAttributedString:([@(self.tweet.retweetCount) stringValue])];
+    NSString *formatedCountString = [TweetCell twitterFormattedNumber:[@(self.tweet.retweetCount) stringValue]];
+    NSAttributedString *retweetCount = [self createAttributedString:formatedCountString];
+    
     [self.retweetButton setAttributedTitle:retweetCount forState:UIControlStateNormal];
     [self.retweetButton setTintColor:(self.tweet.retweeted ? [UIColor systemGreenColor] : [UIColor grayColor])];
 }
 
 - (void)updateFavoriteInfo{
-    // update count
-    NSAttributedString *favoriteCount = [self createAttributedString:([@(self.tweet.favoriteCount) stringValue])];
+    
+    NSString *formatedCountString = [TweetCell twitterFormattedNumber:[@(self.tweet.favoriteCount) stringValue]];
+    NSAttributedString *favoriteCount = [self createAttributedString:formatedCountString];
+    
     [self.favoriteButton setAttributedTitle:favoriteCount forState:UIControlStateNormal];
     
     //update color

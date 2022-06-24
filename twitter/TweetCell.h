@@ -34,6 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)sendUnFavoriteRequest;
 - (void)sendRetweetRequest;
 - (void)sendUnRetweetRequest;
++ (NSString *)twitterFormattedNumber:(NSString *)numberString;
 
 @end
 

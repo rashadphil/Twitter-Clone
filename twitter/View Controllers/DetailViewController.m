@@ -10,6 +10,7 @@
 #import "TimelineViewController.h"
 #import "APIManager.h"
 #import "Media.h"
+#import "TweetCell.h"
 
 @interface DetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *authorName;
@@ -148,13 +149,14 @@
 
 - (void)updateRetweetInfo{
     // update count
-    self.retweetCount.text = [@(self.tweet.retweetCount) stringValue];
+    self.retweetCount.text = [TweetCell twitterFormattedNumber:[@(self.tweet.retweetCount) stringValue]];
+    
     [self.retweetButton setTintColor:(self.tweet.retweeted ? [UIColor systemGreenColor] : [UIColor grayColor])];
 }
 
 - (void)updateFavoriteInfo{
     // update count
-    self.likeCount.text = [@(self.tweet.favoriteCount) stringValue];
+    self.likeCount.text = [TweetCell twitterFormattedNumber:[@(self.tweet.favoriteCount) stringValue]];
     
     //update color
     UIImage *filledFavorite = [UIImage systemImageNamed:@"heart.fill"];
